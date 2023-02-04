@@ -1,0 +1,19 @@
+version: "3"
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql-docker
+    platform: linux/amd64 # config for Apple Silicon
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: "dbname"
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "password"
+      TZ: "Asia/Seoul"
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+
+# docker compose -f mysql-docker-compose.yml up
