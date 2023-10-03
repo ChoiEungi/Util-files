@@ -1,0 +1,19 @@
+<included>
+    <appender name="DISCORD" class="com.github.napstr.logback.DiscordAppender">
+        <webhookUri>{WEBHOOK_URL}</webhookUri>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %msg %n</pattern>
+        </layout>
+        <username>dev be warning bot</username>
+        <avatarUrl>
+            https://avatars.githubusercontent.com/u/70755947?v=4
+        </avatarUrl>
+        <tts>false</tts>
+    </appender>
+    <appender name="ASYNC_DISCORD" class="ch.qos.logback.classic.AsyncAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <appender-ref ref="DISCORD"/>
+    </appender>
+</included>
