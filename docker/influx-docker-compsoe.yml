@@ -10,3 +10,6 @@ services:
       - INFLUXDB_DB=db0
       - INFLUXDB_ADMIN_USER=username
       - INFLUXDB_ADMIN_PASSWORD=password
+
+volumes:
+  influx-storage:
